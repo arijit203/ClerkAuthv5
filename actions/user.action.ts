@@ -6,6 +6,7 @@ import { connect } from "@/db";
 export async function createUser(user: any) {
   try {
     await connect();
+    console.log("Database connected")
     const newUser = await User.create(user);
     return JSON.parse(JSON.stringify(newUser));
   } catch (error) {
